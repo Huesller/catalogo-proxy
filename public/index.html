@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Portal de Catálogos</title>
+
+<style>
+body{
+    margin:0;
+    display:flex;
+    background:#0b0b0b;
+    color:#fff;
+    font-family:Arial;
+}
+
+.sidebar{
+    width:250px;
+    background:#000;
+    padding:20px;
+    border-right:2px solid red;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-bottom:10px;
+    background:#111;
+    border:none;
+    color:#fff;
+    cursor:pointer;
+}
+
+button:hover{
+    background:red;
+}
+
+iframe{
+    flex:1;
+    height:100vh;
+    border:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+    <button onclick="abrir('1494')">TYC</button>
+    <button onclick="abrir('1493')">TYC Retro</button>
+    <button onclick="abrir('1438')">RIDA</button>
+    <button onclick="abrir('1437')">ZATT</button>
+    <button onclick="abrir('1436')">RETOV</button>
+</div>
+
+<iframe id="frame"></iframe>
+
+<script>
+function abrir(id){
+    let url = `http://localhost:3000/proxy?url=https://sistema.zettabrasil.com.br/siggma/catalogos/200-3/id/${id}?p=true`;
+    document.getElementById("frame").src = url;
+}
+</script>
+
+</body>
+</html>
